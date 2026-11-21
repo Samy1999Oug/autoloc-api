@@ -1,0 +1,20 @@
+Answers
+
+
+1. Fetch / cascade justifications (fetch-strategy.md)
+- Agency -> Vehicle: no cascade, vehicles survive agency deletion.
+- Agency -> Employee: no cascade, employees are independent records.
+- Vehicle <-> Equipment: no cascade, equipment is shared.
+- Customer -> Reservation: PERSIST, saving a customer saves new reservations.
+- Reservation -> Vehicle: no cascade, the vehicle exists independently.
+- Reservation <-> Contract: ALL on Reservation side, a contract has no life without its reservation.
+- Vehicle -> Maintenance: PERSIST, maintenance records are saved with the vehicle.
+
+2. 401 vs 403
+401: not authenticated (missing or wrong credentials).
+403: authenticated but not allowed.
+
+
+3. Authentication vs authorization
+Authentication: proving who you are.
+Authorization: deciding what you are allowed to do.
